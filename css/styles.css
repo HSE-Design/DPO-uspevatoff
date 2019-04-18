@@ -138,6 +138,8 @@ form button {
   margin-left: 40px;
   padding: 0 33px;
 
+  cursor: pointer;
+
   color: #FAFFFE;
   border: none;
   border-radius: 8px;
@@ -154,4 +156,10 @@ form button {
   margin-top: 15px;
 
   align-items: center;
+}
+
+.section-logo {
+  position: fixed;
+  right: calc((100vw - 960px) / 2);
+  bottom: 0;
 }
