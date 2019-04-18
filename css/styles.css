@@ -25,6 +25,7 @@ nav {
 
   padding-top: 15px;
 
+  font-size: 14px;
   font-weight: 700;
 
   justify-content: space-between;
@@ -51,4 +52,33 @@ nav a.is-active {
 
 nav a:hover {
   border-bottom: 2px solid rgba(229, 100, 92, 0.8);
+}
+
+label {
+  display: block;
+
+  margin-top: 40px;
+
+  font-size: 16px;
+  font-weight: bold;
+}
+
+input {
+  width: 650px;
+  height: 54px;
+  margin-top: 15px;
+  padding: 0 20px;
+
+  border: none;
+  border-radius: 2px;
+  outline: none;
+  background: #A0B8B2;
+
+  font-size: 18px;
+}
+
+input::placeholder {
+  color: #E9F5F2;
+
+  font-style: italic;
 }
