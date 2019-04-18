@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&subset=cyrillic');
 
 * {
+  box-sizing: border-box;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -81,4 +83,75 @@ input::placeholder {
   color: #E9F5F2;
 
   font-style: italic;
+}
+
+form ul {
+  display: inline-flex;
+
+  color: #8EA49F;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  align-items: center;
+}
+
+form ul li {
+  display: flex;
+
+  height: 54px;
+  padding: 0 20px;
+
+  cursor: pointer;
+  transition: all 200ms ease;
+
+  border: 1px solid #A0B8B2;
+
+  align-items: center;
+}
+
+form ul li:first-child {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+form ul li:last-child {
+  margin-left: -1px;
+
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+form ul li.is-active {
+  color: #FAFFFE;
+  background-color: #A0B8B2;
+}
+
+form ul li:hover {
+  color: #FAFFFE;
+  background: rgba(160, 184, 178, 0.7);
+}
+
+form button {
+  height: 50px;
+  margin-top: -4px;
+  margin-left: 40px;
+  padding: 0 33px;
+
+  color: #FAFFFE;
+  border: none;
+  border-radius: 8px;
+  background: #676CDA;
+  box-shadow: 4px 4px 0px rgba(103, 108, 218, 0.5);
+
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.form-time-select {
+  display: flex;
+
+  margin-top: 15px;
+
+  align-items: center;
 }
