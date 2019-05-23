@@ -20,6 +20,44 @@ statsSectionLink.onclick = function () {
   timerSection.style.display = 'none'
   progressSection.style.display = 'none'
   statsSection.style.display = 'block'
+
+  const table = document.querySelector('table')
+  const tbody = document.querySelector('tbody')
+  const newTbody = document.createElement('tbody')
+  table.replaceChild(newTbody, tbody)
+  const memory = localStorage.length
+
+  if (memory) {
+    for (let i = 0; i < memory; i++) {
+      const memoryItemKey = localStorage.key(i)
+      const memoryItem = localStorage.getItem(memoryItemKey)
+      const memoryItemObject = JSON.parse(memoryItem)
+      // Получаем дату записи
+      // Создаем элемент TD
+      // и кладем внутрь дату записи
+      const itemDate =
+        new Date(+memoryItemKey).getDate()
+      const tdItemDate = document.createElement('td')
+      tdItemDate.innerText = itemDate
+
+      const itemTimer = memoryItemObject.timer
+      const tdItemTimer = document.createElement('td')
+      tdItemTimer.innerText = itemTimer
+
+      const itemName = memoryItemObject.name
+      const tdItemName = document.createElement('td')
+      tdItemName.innerText = itemName
+
+      // Создаем элемент TR
+      const tr = document.createElement('tr')
+      // Кладем внутрь TR дочерние TD
+      tr.appendChild(tdItemDate)
+      tr.appendChild(tdItemTimer)
+      tr.appendChild(tdItemName)
+      // Присоединяем свежесозданный TR к таблице
+      newTbody.appendChild(tr)
+    }
+  }
 }
 
 // Запускаем прогресс бар по клику на кнопку
@@ -61,7 +99,7 @@ form.onsubmit = function handleFormSubmit(e) {
   // localStorage
   const task = {
     name: input.value,
-    time: selectedTime
+    timer: selectedTime
   }
   const stringTask = JSON.stringify(task)
   const key = Date.now()
