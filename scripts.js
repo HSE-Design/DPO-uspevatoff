@@ -29,7 +29,6 @@ statsSectionLink.onclick = function () {
 //   progressSection.style.display = 'block'
 // }
 
-let form = document.querySelector('form')
 const MIN_25 = 5000
 const MIN_5 = 1000
 const min25selector = document.querySelector('.form-time-select__item--25')
@@ -48,9 +47,33 @@ min5selector.onclick = function on5MinClick() {
   selectedTime = MIN_5
 }
 
+const form = document.querySelector('form')
 let input = document.querySelector('input')
 
+form.onsubmit = function handleFormSubmit(e) {
+  e.preventDefault()
+  // Заблокируем инпут от изменений
+  // Чтобы ничего случайно не написать
+  input.disabled = true
 
+  // Берем данные из инпута
+  // и сохраняем в память браузера
+  // localStorage
+  const task = {
+    name: input.value,
+    time: selectedTime
+  }
+  const stringTask = JSON.stringify(task)
+  const key = Date.now()
+  localStorage.setItem(key, stringTask)
+
+  // Затем через 2 секунды после запуска
+  // очистим и разблокируем инпут
+  setTimeout(function () {
+    input.value = ""
+    input.disabled = false
+  }, 2000)
+}
 
 
 
