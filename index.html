@@ -2,24 +2,24 @@
 <html lang="ru" dir="ltr">
 <head>
   <title>Успеватофф</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="styles.css">
   <meta charset="utf-8">
 </head>
 <body>
   <nav>
-    <img src="img/logo.svg" alt="Логотип сервиса">
+    <img src="img/logo.svg" alt="Логотип Успеватофф">
     <ul>
       <li>
-        <a class="is-active" id="timer-section-link" href="#">Таймер</a>
+        <a id="timer-section-link" class="is-active" href="#timer-section">Таймер</a>
       </li>
       <li>
-        <a id="stats-section-link" href="#">Статистика</a>
+        <a id="stats-section-link" href="#stats-section">Статистика</a>
       </li>
     </ul>
   </nav>
   <section id="timer-section">
     <form>
-      <label for="task-name">Чем планируете заниматься</label>
+      <label for="taskname">Чем планируете заниматься</label>
       <input
         type="text"
         name="task-name"
@@ -28,16 +28,66 @@
       <label>Сколько хотите потратить времени</label>
       <div class="form-time-select">
         <ul>
-          <li class="is-active">25 минут</li>
-          <li>5 минут</li>
+          <li class="form-time-select__item--25 is-active">25 минут</li>
+          <li class="form-time-select__item--5 ">5 минут</li>
         </ul>
-        <button type="button">Запустить</button>
+        <button type="button" id="button">Запустить</button>
       </div>
     </form>
-    <img class="section-logo" src="img/clock.svg" alt="Иконка часов с будильником">
+    <img class="section-logo" src="img/001-clock.svg" alt="Часы">
   </section>
-  <section id="stats-section">
-
+  <section class="is-hidden" id="stats-section">
+    <label>Завершенные задачи</label>
+    <table>
+      <tr>
+        <th>Дата</th>
+        <th>Таймер</th>
+        <th>Задача</th>
+      </tr>
+      <tr>
+        <td>13 апреля</td>
+        <td>25 мин</td>
+        <td class="last-column-item">Первая версия планировщика времени</td>
+        <td>
+          <img src="img/cross.svg" alt="">
+        </td>
+      </tr>
+      <tr>
+        <td>13 апреля</td>
+        <td>25 мин</td>
+        <td class="last-column-item">Хочу подобрать шрифты для планировщика</td>
+        <td>
+          <img src="img/cross.svg" alt="">
+        </td>
+      </tr>
+      <tr>
+        <td>13 апреля</td>
+        <td>25 мин</td>
+        <td class="last-column-item">Хочу выбрать цвета для планировщика</td>
+        <td>
+          <img src="img/cross.svg" alt="">
+        </td>
+      </tr>
+      <tr>
+        <td>13 апреля</td>
+        <td>5 мин</td>
+        <td class="last-column-item">Перерыв</td>
+        <td>
+          <img src="img/cross.svg" alt="">
+        </td>
+      </tr>
+    </table>
+    <img class="section-logo" src="img/002-to-do-list.svg" alt="Часы">
+  </section>
+  <section class="is-hidden" id="progress-section">
+    <label>Сколько времени осталось</label>
+    <div class="progress-bar">
+        <p>18 мин</p>
+    </div>
+    <p class="task-name">
+        Задача: «Хочу написать первый пункт плана по захвату мира»
+    </p>
+    <img class="section-logo" src="img/003-hourglass.svg" alt="Часы">
   </section>
   <script src="scripts.js"></script>
 </body>
